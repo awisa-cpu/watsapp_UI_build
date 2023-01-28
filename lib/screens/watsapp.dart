@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:watsappproject/pages/calls_page.dart';
-import 'package:watsappproject/pages/chats_page.dart';
-import 'package:watsappproject/pages/community_page.dart';
-import 'package:watsappproject/pages/status_page.dart';
+import 'package:watsappproject/screens/calls_screen.dart';
+import 'package:watsappproject/screens/chats_screen.dart';
+import 'package:watsappproject/screens/community_screen.dart';
+import 'package:watsappproject/screens/status_screen.dart';
 
 class Watsapp extends StatefulWidget {
   const Watsapp({super.key});
@@ -38,7 +38,9 @@ class _WatsappState extends State<Watsapp> {
                 IconButton(
                   splashRadius: 20,
                   enableFeedback: false,
-                  onPressed: () {},
+                  onPressed: () {
+                    //the search functionality will be implemented
+                  },
                   icon: const Icon(
                     Icons.search,
                     size: 30,
@@ -117,10 +119,12 @@ class _WatsappState extends State<Watsapp> {
             //
             SliverToBoxAdapter(
               child: Column(
-                children: const [
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  //the issue is using an expanded widget doesnt work and thats why a sizedbox is used
                   SizedBox(
-                    height: 700,
-                    child: TabBarView(
+                    height: MediaQuery.of(context).size.height * 0.73,
+                    child: const TabBarView(
                       children: [
                         //community Tab
                         CommunityPage(),
@@ -136,6 +140,21 @@ class _WatsappState extends State<Watsapp> {
                       ],
                     ),
                   ),
+                  Container(
+                    height: 400,
+                    width: 400,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    height: 400,
+                    width: 400,
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 400,
+                    width: 400,
+                    color: Colors.green,
+                  )
                 ],
               ),
             ),

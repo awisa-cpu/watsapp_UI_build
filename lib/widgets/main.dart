@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:watsappproject/pages/chats_page.dart';
-import 'package:watsappproject/pages/individual_chats.dart';
-import 'package:watsappproject/pages/watsapp.dart';
+import 'package:watsappproject/screens/chats_screen.dart';
+import 'package:watsappproject/screens/individual_screen.dart';
+import 'package:watsappproject/screens/watsapp.dart';
 
-import 'routes_constants/constants.dart';
+import '../routes_constants/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
       title: 'Watsapp',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
       ),
       home: const Watsapp(),
       routes: {
         personalChats: (context) => const IndividualChats(),
         watsappChats: (context) => const Watsapp(),
-        chats :(context) => const ChatsPage(),
+        chats: (context) => const ChatsPage(),
       },
     );
   }

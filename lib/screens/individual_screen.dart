@@ -23,7 +23,7 @@ class _IndividualChatsState extends State<IndividualChats> {
               Icon(Icons.arrow_back),
               CircleAvatar(
                 radius: 16,
-                backgroundImage: AssetImage('images/profile1.png'),
+                backgroundImage: AssetImage('assets/images/profile.png'),
                 backgroundColor: Colors.white,
               )
             ],

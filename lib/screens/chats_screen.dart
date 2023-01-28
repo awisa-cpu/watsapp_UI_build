@@ -10,15 +10,17 @@ class ChatsPage extends StatefulWidget {
 }
 
 class _ChatsPageState extends State<ChatsPage> {
-  final date = DateFormat('dd/MM/yyyy').format(DateTime.now());
+  final _date = DateFormat('dd/MM/yyyy').format(DateTime.now());
   @override
   Widget build(BuildContext context) {
     return Scrollbar(
       child: Scaffold(
         body: Container(
-          color: Colors.white,
+          padding:
+              const EdgeInsets.only(top: 15, bottom: 20, left: 0, right: 0),
           child: ListView.builder(
-            itemCount: 50,
+            padding: EdgeInsets.zero,
+            itemCount: 100,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(5.0),
@@ -28,31 +30,29 @@ class _ChatsPageState extends State<ChatsPage> {
                         personalChats, (route) => false);
                   },
                   leading: const CircleAvatar(
-                    radius: 30,
+                    radius: 38,
                     backgroundColor: Colors.teal,
                     child: CircleAvatar(
-                      radius: 25,
+                      radius: 23,
                       backgroundColor: Colors.white,
-                      backgroundImage: AssetImage('images/profile1.png'),
+                      backgroundImage: AssetImage('assets/images/profile.png'),
                     ),
                   ),
                   title: const Text('Username'),
-                  trailing: Text(date),
+                  subtitle: const Text('Last message',
+                      style: TextStyle(fontSize: 12)),
+                  trailing: Text(_date),
+                  isThreeLine: true,
+                  dense: true,
                   enableFeedback: false,
                 ),
               );
             },
           ),
         ),
-
-        //work on the floatingactionbutton on all the tabs
-        floatingActionButton: Container(
-          height: 30,
-          width: 30,
-          decoration: const BoxDecoration(color: Colors.teal),
-          child: const Center(
-            child: Icon(Icons.chat),
-          ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.chat),
         ),
       ),
     );

@@ -13,7 +13,7 @@ class _CommunityPageState extends State<CommunityPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.white,
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Column(
           children: [
             const SizedBox(
@@ -26,20 +26,29 @@ class _CommunityPageState extends State<CommunityPage> {
             const SizedBox(
               height: 8,
             ),
-            Text(
-              '    Easily Organise your related groups amd send announcements.',
-              style: _font,
+            SizedBox(
+              width: 350,
+              child: Text(
+                '    Easily Organise your related groups amd send announcements.',
+                style: _font,
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            SizedBox(
+              width: 350,
+              child: Text(
+                '  Now, your communities, like neighbourhoods or schools, can have',
+                style: _font,
+              ),
             ),
             Text(
-              '  Now, your communities, like neighbourhoods or schools, can have',
-              style: _font,
-            ),
-            Text(
-              'their own space',
+              'their own space.',
               style: _font,
             ),
             const SizedBox(
-              height: 25,
+              height: 35,
             ),
             InkWell(
               enableFeedback: false,
